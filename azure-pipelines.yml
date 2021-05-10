@@ -40,6 +40,7 @@ schedules:
 variables:
   CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
   CIBW_MANYLINUX_I686_IMAGE: manylinux2010
+  CIBW_MANYLINUX_AARCH64_IMAGE: manylinux2014
   CI: true
 
 jobs:
@@ -70,6 +71,7 @@ jobs:
       # The linux builds are the fastest so run all in one job
       - wheels_cp3[789]*linux_i686
       - wheels_cp3[789]*linux_x86_64
+      - wheels_cp3[789]*linux_aarch64
       # macos is a little slower so split it into two
       - wheels_cp37*macosx_x86_64
       - wheels_cp38*macosx_x86_64
