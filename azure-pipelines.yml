@@ -71,7 +71,10 @@ jobs:
       # The linux builds are the fastest so run all in one job
       - wheels_cp3[789]*linux_i686
       - wheels_cp3[789]*linux_x86_64
-      - wheels_cp3[789]*linux_aarch64
+      - wheels_cp37-manylinux_aarch64
+      - wheels_cp38-manylinux_aarch64
+      - wheels_cp39-manylinux_aarch64
+      #- wheels_cp3[789]*linux_aarch64
       # macos is a little slower so split it into two
       - wheels_cp37*macosx_x86_64
       - wheels_cp38*macosx_x86_64
