@@ -41,6 +41,7 @@ variables:
   CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
   CIBW_MANYLINUX_I686_IMAGE: manylinux2010
   CIBW_ARCHS_LINUX: "auto, aarch64"
+  CIBW_TEST_SKIP: "*-manylinux_aarch64"
   CI: true
 
 jobs:
