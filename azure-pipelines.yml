@@ -41,10 +41,11 @@ variables:
   CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
   CIBW_MANYLINUX_I686_IMAGE: manylinux2010
   CIBW_ARCHS_LINUX: "auto, aarch64"
-  CIBW_TEST_SKIP: "*-manylinux_aarch64"
+  #CIBW_TEST_SKIP: "*-manylinux_aarch64"
   CI: true
 
 jobs:
+timeoutInMinutes: 0
 # Run this job on non-main branches (when triggered) or if we are on main and on the cron, or if manually triggered through the web ui.
 - ${{ if or(ne(variables['Build.SourceBranchName'], 'main'), eq(variables['Build.Reason'], 'Schedule'), eq(variables['Build.Reason'], 'Manual')) }}:
   - template: publish.yml@OpenAstronomy
